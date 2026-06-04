@@ -230,14 +230,14 @@ input[type=range]::-webkit-slider-thumb:hover{
 
     <div class="input-section">
 
-        <div class="control-group">
-            <label for="teamSize">Размер команды (человек)</label>
+<div class="control-group">
+    <label for="officeDays">Дней в офисе в неделю</label>
 
-            <div class="slider-container">
-                <input type="range" id="teamSize" min="1" max="50" value="12">
-                <span class="counter-value" id="teamSizeVal">12</span>
-            </div>
-        </div>
+    <div class="slider-container">
+        <input type="range" id="officeDays" min="0" max="5" value="4">
+        <span class="counter-value" id="officeDaysVal">4</span>
+    </div>
+</div>
 
         <div class="control-group">
             <label for="coffeeCut">Отказ от кофе и кейк-попсов в неделю</label>
@@ -304,11 +304,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const teamSizeInput = document.getElementById('teamSize');
     const coffeeCutInput = document.getElementById('coffeeCut');
-    const remoteDaysInput = document.getElementById('remoteDays');
+    const officeDaysInput = document.getElementById('officeDays');
 
     const teamSizeVal = document.getElementById('teamSizeVal');
     const coffeeCutVal = document.getElementById('coffeeCutVal');
-    const remoteDaysVal = document.getElementById('remoteDaysVal');
+    const officeDaysVal = document.getElementById('officeDaysVal');
 
     const foodSavingsEl = document.getElementById('foodSavings');
     const remoteSavingsEl = document.getElementById('remoteSavings');
@@ -319,11 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const teamSize = Number(teamSizeInput.value);
         const coffeeCut = Number(coffeeCutInput.value);
-        const remoteDays = Number(remoteDaysInput.value);
+        const officeDays = Number(officeDaysInput.value);
+        const remoteDays = 5 - officeDays;
 
         teamSizeVal.textContent = teamSize;
         coffeeCutVal.textContent = coffeeCut;
-        remoteDaysVal.textContent = remoteDays;
+        officeDaysVal.textContent = officeDays;
 
         const annualFoodSavings =
             teamSize *
@@ -353,7 +354,9 @@ document.addEventListener('DOMContentLoaded', () => {
             Math.floor(totalBudget / MASSAGE_SESSION_COST);
 
         const massagesPerPerson =
-            Math.floor(totalMassages / teamSize);
+    teamSize > 0
+        ? Math.floor(totalMassages / teamSize)
+        : 0;
 
         foodSavingsEl.textContent =
             annualFoodSavings.toLocaleString('ru-RU') + ' ₽';
@@ -370,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     teamSizeInput.addEventListener('input', calculateEconomy);
     coffeeCutInput.addEventListener('input', calculateEconomy);
-    remoteDaysInput.addEventListener('input', calculateEconomy);
+    officeDaysInput.addEventListener('input', calculateEconomy);
 
     calculateEconomy();
 
