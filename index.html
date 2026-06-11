@@ -1,35 +1,31 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Офисная Экономия 2026 • Калининград</title>
+<title>Офисная Экономия • Калининград</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
-    --bg-gradient: linear-gradient(135deg,#f3f7f0 0%,#fbf5ee 100%);
-    --surface: rgba(255,255,255,.85);
+:root{
+    --bg-gradient:linear-gradient(135deg,#f3f7f0 0%,#fbf5ee 100%);
+    --surface:rgba(255,255,255,.85);
 
     --lime-neon:#d4f57a;
     --lime-pastel:#eafbc0;
 
     --orange-neon:#ff9f43;
-    --orange-pastel:#ffdcb8;
 
     --text-main:#2d3436;
     --text-muted:#636e72;
 
-    --glow-lime:rgba(212,245,122,.6);
-    --glow-orange:rgba(255,159,67,.4);
-
-    --radius-m3:28px;
+    --radius:28px;
 }
 
 *{
@@ -46,28 +42,23 @@ body{
     min-height:100vh;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
     padding:20px;
 }
 
 .calculator-card{
+    width:100%;
+    max-width:980px;
+
     background:var(--surface);
 
     backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
 
-    border:1px solid rgba(255,255,255,.6);
-
-    width:100%;
-    max-width:950px;
-
-    border-radius:var(--radius-m3);
+    border-radius:var(--radius);
 
     padding:40px;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.03);
 
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -77,8 +68,7 @@ body{
 @media(max-width:768px){
     .calculator-card{
         grid-template-columns:1fr;
-        padding:25px;
-        gap:25px;
+        padding:24px;
     }
 }
 
@@ -86,23 +76,25 @@ h1{
     grid-column:1 / -1;
 
     font-family:'Orbitron',sans-serif;
-    font-size:1.6rem;
-    font-weight:800;
+    font-size:1.5rem;
 
-    text-transform:uppercase;
-
-    background:linear-gradient(90deg,#ff9f43,#b8e91c);
+    background:linear-gradient(90deg,#ff9f43,#9dd42f);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+}
 
-    margin-bottom:10px;
+.subtitle{
+    grid-column:1 / -1;
+
+    color:var(--text-muted);
+    margin-top:-20px;
 }
 
 .input-section{
     display:flex;
     flex-direction:column;
-    gap:25px;
+    gap:28px;
 }
 
 .control-group{
@@ -131,8 +123,8 @@ input[type=range]{
     appearance:none;
     -webkit-appearance:none;
 
-    border-radius:8px;
-    background:#e4e9ed;
+    background:#e6eaee;
+    border-radius:10px;
 }
 
 input[type=range]::-webkit-slider-thumb{
@@ -144,24 +136,17 @@ input[type=range]::-webkit-slider-thumb{
 
     border-radius:50%;
 
-    background:var(--text-main);
+    background:#2d3436;
     border:4px solid var(--lime-neon);
 
     cursor:pointer;
 }
 
-input[type=range]::-webkit-slider-thumb:hover{
-    transform:scale(1.15);
-    box-shadow:0 0 15px var(--glow-lime);
-}
-
 .counter-value{
-    min-width:50px;
-
+    min-width:45px;
     text-align:right;
 
     font-family:'Orbitron',sans-serif;
-    font-size:1.1rem;
 }
 
 .results-section{
@@ -169,120 +154,149 @@ input[type=range]::-webkit-slider-thumb:hover{
 
     border-radius:20px;
 
-    padding:30px;
-
-    border:1px solid rgba(255,255,255,.4);
+    padding:28px;
 
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:22px;
 }
 
 .result-block{
     display:flex;
     flex-direction:column;
-    gap:5px;
+    gap:4px;
 }
 
 .result-title{
     font-size:.85rem;
     color:var(--text-muted);
     text-transform:uppercase;
-    font-weight:700;
 }
 
 .result-number{
-    font-family:'Orbitron',sans-serif;
     font-size:2rem;
+    font-family:'Orbitron',sans-serif;
     font-weight:800;
 }
 
-.highlight-lime{
-    color:#8cb800;
+.green{
+    color:#7fae00;
 }
 
-.highlight-orange{
+.orange{
     color:#e67e22;
 }
 
-.massage-info{
-    margin-top:10px;
-
+.note{
     background:var(--lime-pastel);
 
-    padding:15px;
+    padding:16px;
 
-    border-radius:16px;
-
-    border-left:5px solid var(--orange-neon);
+    border-radius:14px;
 
     line-height:1.5;
+
+    border-left:5px solid var(--orange-neon);
+}
+
+.explainer{
+    font-size:.9rem;
+    color:var(--text-muted);
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="calculator-card">
 
-    <h1>Офисная Экономия 2026 • Калининград</h1>
+<h1>Офисная Экономия • Калининград</h1>
 
-    <div class="input-section">
+<p class="subtitle">
+Посмотрите, как небольшие ежедневные расходы команды превращаются в годовой бюджет на здоровье сотрудников.
+</p>
+
+<div class="input-section">
 
 <div class="control-group">
-    <label for="officeDays">Дней в офисе в неделю</label>
+<label for="teamSize">Размер команды</label>
 
-    <div class="slider-container">
-        <input type="range" id="officeDays" min="0" max="5" value="4">
-        <span class="counter-value" id="officeDaysVal">4</span>
-    </div>
+<div class="slider-container">
+<input type="range" id="teamSize" min="1" max="50" value="12">
+<span class="counter-value" id="teamSizeVal">12</span>
+</div>
 </div>
 
-        <div class="control-group">
-            <label for="coffeeCut">Отказ от кофе и кейк-попсов в неделю</label>
+<div class="control-group">
+<label for="coffeeCut">
+Отказ от кофе + кейк-попсов (на человека в неделю)
+</label>
 
-            <div class="slider-container">
-                <input type="range" id="coffeeCut" min="0" max="4" value="2">
-                <span class="counter-value" id="coffeeCutVal">2</span>
-            </div>
-        </div>
+<div class="slider-container">
+<input type="range" id="coffeeCut" min="0" max="4" value="2">
+<span class="counter-value" id="coffeeCutVal">2</span>
+</div>
+</div>
 
-        <div class="control-group">
-            <label for="remoteDays">Дней удалёнки в неделю</label>
+<div class="control-group">
+<label for="officeDays">
+Сколько дней команда работает из офиса
+</label>
 
-            <div class="slider-container">
-                <input type="range" id="remoteDays" min="0" max="5" value="1">
-                <span class="counter-value" id="remoteDaysVal">1</span>
-            </div>
-        </div>
+<div class="slider-container">
+<input type="range" id="officeDays" min="0" max="5" value="4">
+<span class="counter-value" id="officeDaysVal">4</span>
+</div>
+</div>
 
-    </div>
+<p class="explainer">
+5 дней в офисе = максимальные расходы.<br>
+0 дней в офисе = максимальная экономия.
+</p>
 
-    <div class="results-section">
+</div>
 
-        <div class="result-block">
-            <span class="result-title">Годовая экономия на вкусняшках</span>
-            <span class="result-number highlight-lime" id="foodSavings">0 ₽</span>
-        </div>
+<div class="results-section">
 
-        <div class="result-block">
-            <span class="result-title">Годовая экономия на удалёнке</span>
-            <span class="result-number highlight-orange" id="remoteSavings">0 ₽</span>
-        </div>
+<div class="result-block">
+<span class="result-title">
+Экономия на кофе и десертах за год
+</span>
 
-        <div class="result-block">
-            <span class="result-title">Общий годовой бюджет</span>
-            <span class="result-number" id="totalBudget">0 ₽</span>
-        </div>
+<span class="result-number green" id="foodSavings">
+0 ₽
+</span>
+</div>
 
-        <div class="massage-info">
-            💆‍♂️ На эти деньги каждый сотрудник сможет получить в среднем
-            <strong id="massagePerPerson">0</strong>
-            сеансов массажа спины в год.
-        </div>
+<div class="result-block">
+<span class="result-title">
+Экономия на офисе, логистике и ресурсах
+</span>
 
-    </div>
+<span class="result-number orange" id="remoteSavings">
+0 ₽
+</span>
+</div>
+
+<div class="result-block">
+<span class="result-title">
+Общий годовой бюджет
+</span>
+
+<span class="result-number" id="totalBudget">
+0 ₽
+</span>
+</div>
+
+<div class="note">
+💆‍♂️ Каждый сотрудник сможет получить в среднем
+<strong id="massagePerPerson">0</strong>
+сеансов массажа спины в год.
+</div>
+
+</div>
 
 </div>
 
@@ -290,95 +304,95 @@ input[type=range]::-webkit-slider-thumb:hover{
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const COST_COFFEE_POPS = 420;
-    const WEEKS_IN_YEAR = 52;
+const COST_COFFEE_POPS = 420;
+const WEEKS_IN_YEAR = 52;
 
-    const ECO_ELECTRICITY = 10.12;
-    const ECO_WATER = 2.55;
-    const ECO_SUPPLIES = 20.0;
-    const ECO_OFFICE_WATER = 23.3;
-    const ECO_CLEANING_TRASH = 24.0;
-    const ECO_TRANSPORT = 76.0;
+const ECO_ELECTRICITY = 10.12;
+const ECO_WATER = 2.55;
+const ECO_SUPPLIES = 20.00;
+const ECO_OFFICE_WATER = 23.30;
+const ECO_CLEANING_TRASH = 24.00;
+const ECO_TRANSPORT = 76.00;
 
-    const MASSAGE_SESSION_COST = 2000;
+const MASSAGE_SESSION_COST = 2000;
 
-    const teamSizeInput = document.getElementById('teamSize');
-    const coffeeCutInput = document.getElementById('coffeeCut');
-    const officeDaysInput = document.getElementById('officeDays');
+const DAILY_REMOTE_ECONOMY =
+    ECO_ELECTRICITY +
+    ECO_WATER +
+    ECO_SUPPLIES +
+    ECO_OFFICE_WATER +
+    ECO_CLEANING_TRASH +
+    ECO_TRANSPORT;
 
-    const teamSizeVal = document.getElementById('teamSizeVal');
-    const coffeeCutVal = document.getElementById('coffeeCutVal');
-    const officeDaysVal = document.getElementById('officeDaysVal');
+const teamSizeInput = document.getElementById('teamSize');
+const coffeeCutInput = document.getElementById('coffeeCut');
+const officeDaysInput = document.getElementById('officeDays');
 
-    const foodSavingsEl = document.getElementById('foodSavings');
-    const remoteSavingsEl = document.getElementById('remoteSavings');
-    const totalBudgetEl = document.getElementById('totalBudget');
-    const massagePerPersonEl = document.getElementById('massagePerPerson');
+const teamSizeVal = document.getElementById('teamSizeVal');
+const coffeeCutVal = document.getElementById('coffeeCutVal');
+const officeDaysVal = document.getElementById('officeDaysVal');
 
-    function calculateEconomy() {
+const foodSavingsEl = document.getElementById('foodSavings');
+const remoteSavingsEl = document.getElementById('remoteSavings');
+const totalBudgetEl = document.getElementById('totalBudget');
+const massagePerPersonEl = document.getElementById('massagePerPerson');
 
-        const teamSize = Number(teamSizeInput.value);
-        const coffeeCut = Number(coffeeCutInput.value);
-        const officeDays = Number(officeDaysInput.value);
-        const remoteDays = 5 - officeDays;
+function calculateEconomy(){
 
-        teamSizeVal.textContent = teamSize;
-        coffeeCutVal.textContent = coffeeCut;
-        officeDaysVal.textContent = officeDays;
+    const teamSize = Number(teamSizeInput.value);
+    const coffeeCut = Number(coffeeCutInput.value);
+    const officeDays = Number(officeDaysInput.value);
 
-        const annualFoodSavings =
-            teamSize *
-            coffeeCut *
-            COST_COFFEE_POPS *
-            WEEKS_IN_YEAR;
+    const remoteDays = 5 - officeDays;
 
-        const totalEcoPerPersonPerDay =
-            ECO_ELECTRICITY +
-            ECO_WATER +
-            ECO_SUPPLIES +
-            ECO_OFFICE_WATER +
-            ECO_CLEANING_TRASH +
-            ECO_TRANSPORT;
+    teamSizeVal.textContent = teamSize;
+    coffeeCutVal.textContent = coffeeCut;
+    officeDaysVal.textContent = officeDays;
 
-        const annualRemoteSavings =
-            teamSize *
-            remoteDays *
-            totalEcoPerPersonPerDay *
-            WEEKS_IN_YEAR;
+    const annualFoodSavings =
+        teamSize *
+        coffeeCut *
+        COST_COFFEE_POPS *
+        WEEKS_IN_YEAR;
 
-        const totalBudget =
-            annualFoodSavings +
-            annualRemoteSavings;
+    const annualRemoteSavings =
+        teamSize *
+        remoteDays *
+        DAILY_REMOTE_ECONOMY *
+        WEEKS_IN_YEAR;
 
-        const totalMassages =
-            Math.floor(totalBudget / MASSAGE_SESSION_COST);
+    const totalBudget =
+        annualFoodSavings +
+        annualRemoteSavings;
 
-        const massagesPerPerson =
-    teamSize > 0
-        ? Math.floor(totalMassages / teamSize)
-        : 0;
+    const totalMassages =
+        Math.floor(totalBudget / MASSAGE_SESSION_COST);
 
-        foodSavingsEl.textContent =
-            annualFoodSavings.toLocaleString('ru-RU') + ' ₽';
+    const massagesPerPerson =
+        Math.floor(totalMassages / teamSize);
 
-        remoteSavingsEl.textContent =
-            Math.round(annualRemoteSavings).toLocaleString('ru-RU') + ' ₽';
+    foodSavingsEl.textContent =
+        Math.round(annualFoodSavings).toLocaleString('ru-RU') + ' ₽';
 
-        totalBudgetEl.textContent =
-            Math.round(totalBudget).toLocaleString('ru-RU') + ' ₽';
+    remoteSavingsEl.textContent =
+        Math.round(annualRemoteSavings).toLocaleString('ru-RU') + ' ₽';
 
-        massagePerPersonEl.textContent =
-            massagesPerPerson;
-    }
+    totalBudgetEl.textContent =
+        Math.round(totalBudget).toLocaleString('ru-RU') + ' ₽';
 
-    teamSizeInput.addEventListener('input', calculateEconomy);
-    coffeeCutInput.addEventListener('input', calculateEconomy);
-    officeDaysInput.addEventListener('input', calculateEconomy);
+    massagePerPersonEl.textContent =
+        massagesPerPerson;
+}
 
-    calculateEconomy();
+teamSizeInput.addEventListener('input', calculateEconomy);
+coffeeCutInput.addEventListener('input', calculateEconomy);
+officeDaysInput.addEventListener('input', calculateEconomy);
+
+calculateEconomy();
 
 });
 
 </script>
 
 </body>
+</html>
